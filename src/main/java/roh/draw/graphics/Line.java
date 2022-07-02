@@ -7,9 +7,9 @@ public class Line extends GraphicComponent {
     @Override
     public void initializeCoordinates(String[] commands) throws InvalidInputException {
 
-        setWidth(this.getWidth());
-        setHeight(this.getHeight());
-        setGraphic(this.getGraphic());
+//        setWidth(this.getWidth());
+//        setHeight(this.getHeight());
+//        setGraphic(this.getGraphic());
 
         int x1 = Integer.parseInt(commands[1]);
         int y1 = Integer.parseInt(commands[2]);

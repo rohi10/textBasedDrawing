@@ -1,5 +1,7 @@
 package roh.draw.graphics;
 
+import roh.draw.exception.InvalidInputException;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,10 +39,10 @@ public class GraphicsEnums {
             return numOfCordinates;
         }
 
-        public static InputCharacters fromValue(final String value) {
+        public static InputCharacters fromValue(final String value) throws InvalidInputException {
             final InputCharacters constant = INPUT_CONSTANTS.get(value);
             if (constant == null) {
-                throw new IllegalArgumentException("Invalid input " + value);
+                throw new InvalidInputException("Invalid input " + value);
             } else {
                 return constant;
             }

@@ -2,6 +2,8 @@ package roh.draw.graphics;
 
 import roh.draw.exception.InvalidInputException;
 
+import java.util.Arrays;
+
 public abstract class GraphicComponent {
 
     protected int width;
@@ -69,6 +71,8 @@ public abstract class GraphicComponent {
             }
             System.out.println();
         }
+        System.out.println(Arrays.deepToString(graphic));
+
     }
 
     public abstract void initializeCoordinates(String[] commands) throws InvalidInputException;
