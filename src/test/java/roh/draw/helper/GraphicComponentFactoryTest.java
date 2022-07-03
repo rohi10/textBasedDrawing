@@ -6,8 +6,6 @@ import roh.draw.graphics.Canvas;
 import roh.draw.graphics.GraphicComponent;
 import roh.draw.graphics.Line;
 import roh.draw.graphics.Rectangle;
-
-
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -15,11 +13,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class GraphicComponentFactoryTest {
 
     public static final String INVALID_NUMBER_OF_INPUT_COORDINATES = "Invalid number of input coordinates";
+
     public static final String INVALID_INPUT = "Invalid input";
+
     private String[] invalidCommands = "D 50 4".split(" ");
+
     private String[] commandWithInvalidArgs = "C 50".split(" ");
+
     private String[] canvasCommand = "C 20 5".split(" ");
+
     private String[] rectangleCommand = "R 15 2 20 5".split(" ");
+
     private String[] lineCommand = "L 1 3 7 3".split(" ");
 
 

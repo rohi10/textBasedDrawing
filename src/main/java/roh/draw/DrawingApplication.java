@@ -29,9 +29,6 @@ public class DrawingApplication {
         }
     }
 
-
-
-
     private static void displayUsage() {
         String usage = "Usage: \n"
                 + "-------\n"

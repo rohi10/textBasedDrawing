@@ -33,33 +33,21 @@ public class LineTest {
         line.setGraphic(canvas.graphic);
 
         char[][] expectedGraphic = {{'-','-', '-', '-', '-', '-'}, {'|', 0 ,0  ,0  ,0  , '|'}, {'|', 0 ,0  ,0  , 0 , '|'}, {'|', 0 , 0 ,0  ,0  , '|'}, {'|', 'X', 'X', 'X', 0 , '|'}, {'|',0  ,0  ,0  ,0  , '|'}, {'|',0  ,0  ,0  ,0  , '|'}, {'|',  0, 0 , 0 , 0 , '|'}, {'|',  0, 0 , 0 , 0 , '|'}, {'-','-', '-', '-', '-', '-'}};
-       // char[][] expectedGraphic  = [[-, -, -, -, -, -], [|,  ,  ,  ,  , |], [|,  ,  ,  ,  , |], [|,  ,  ,  ,  , |], [|, X, X, X,  , |], [|,  ,  ,  ,  , |], [|,  ,  ,  ,  , |],    [|,  ,  ,  ,  , |],    [|,  ,  ,  ,  , |],    [-, -, -, -, -, -]]
-
 
         line.initializeCoordinates(commands);
-        System.out.println(line.getHeight());
-        System.out.println(line.height);
 
         assertTrue(line.getHeight() == 8);
         assertTrue(line.getWidth() == 4);
         assertEquals(Arrays.deepToString(line.getGraphic()), Arrays.deepToString(expectedGraphic));
-
-
     }
     @Test
     public void Should_Throw_InvalidInputException_When_CoordsExceedCanvas() throws InvalidInputException {
 
         Line line = new Line();
-
-
         Exception exception = assertThrows(InvalidInputException.class, () -> {
             line.initializeCoordinates(commandWithInvalidCoords);
         });
-
         String actualMessage = exception.getMessage();
         assertTrue(actualMessage.contains(INVALID_COORDINATE_VALUES));
     }
-
-
-
 }

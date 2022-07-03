@@ -19,10 +19,10 @@ public class CanvasTest {
 
         Canvas canvas = new Canvas();
         char[][] expectedGraphic = {{'-', '-','-','-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'}, {'|', 0 ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  , '|'}, {'|', 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,0  ,0  , 0 ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  , '|'}, {'|', 0 ,0  ,0  ,0  ,0  ,0  ,0  ,0  , 0 , 0 , 0 ,0  ,0  ,0  , 0 ,0  ,0  ,0  ,0  , 0 ,'|'}, {'|', 0 ,0  , 0 ,0  ,0  ,0  ,0  ,0  , 0 ,0  ,0  , 0 ,0  ,0  ,0  ,0  ,0  , 0 , 0 , 0 , '|'}, {'|',0  ,0  ,0  ,0  ,0  ,0  , 0 ,0  ,0  ,0  , 0 , 0 , 0 ,0  ,0  ,0  , 0 , 0 , 0 , 0 , '|'}, {'-','-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'}};
-        canvas.initializeCoordinates(commands);
+        canvas.initializeCoordinates(canvasCommands);
 
-        assertTrue(canvas.getHeight() == 5);
-        assertTrue(canvas.getWidth() == 20);
+        assertTrue(canvas.height == 5);
+        assertTrue(canvas.width == 20);
         assertEquals(Arrays.deepToString(canvas.getGraphic()), Arrays.deepToString(expectedGraphic));
     }
 

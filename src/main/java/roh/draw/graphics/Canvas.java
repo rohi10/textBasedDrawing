@@ -11,8 +11,8 @@ public class Canvas extends GraphicComponent {
         int height = Integer.parseInt(commands[2]);
         graphic = new char[height + 2][width + 2];
 
-        setWidth(width);
-        setHeight(height);
+        this.setWidth(width);
+        this.setHeight(height);
 
         draw(0, 0, width + 1, 0, GraphicConstants.CANVAS_HORIZONTAL_CHAR);
         draw(0, 1, 0, height + 1, GraphicConstants.CANVAS_VERTICAL_CHAR);

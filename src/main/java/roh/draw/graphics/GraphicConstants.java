@@ -10,6 +10,4 @@ public class GraphicConstants {
 
     public static final char EMPTY_CHAR = ' ';
 
-
-
 }

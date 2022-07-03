@@ -7,7 +7,9 @@ import java.util.Arrays;
 public abstract class GraphicComponent {
 
     protected int width;
+
     protected int height;
+
     protected char[][] graphic;
 
     public char[][] getGraphic() {
@@ -17,7 +19,6 @@ public abstract class GraphicComponent {
     public void setGraphic(char[][] graphic) {
         this.graphic = graphic;
     }
-
 
     public int getWidth() {
         return width;
@@ -37,11 +38,11 @@ public abstract class GraphicComponent {
 
     public void draw(int x1, int y1, int x2, int y2, char character) {
 
-        if (x1 == x2) {
+        if (x1 == x2) { //Drawing the vertical line
             for (int i = y1; i <= y2; i++) {
                 graphic[i][x1] = character;
             }
-        } else if (y1 == y2) {
+        } else if (y1 == y2) { //Drawing the horizontal line
             for (int i = x1; i <= x2; i++) {
                 graphic[y1][i] = character;
             }
@@ -59,7 +60,6 @@ public abstract class GraphicComponent {
         }
 
     public void printUsingCoordinates() {
-
 
         for (int i = 0; i < graphic.length; ++i) {
             for (int j = 0; j < graphic[i].length; j++) {
