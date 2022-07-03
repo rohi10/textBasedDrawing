@@ -51,7 +51,7 @@ public abstract class GraphicComponent {
 
     public void checkIfCoordsAreWithinCanvas(int x1, int y1, int x2, int y2)
             throws InvalidInputException {
-        if (!(x1 < width && y1 < height && x2 < width && y2 < height && x1 >= 1 && y1 >= 1 && x2 >= 1 && y2 >= 1 && x1 <= x2 && y1 <= y2)) {
+        if (!(x1 <= width && y1 <= height && x2 <= width && y2 <= height && x1 >= 1 && y1 >= 1 && x2 >= 1 && y2 >= 1 && x1 <= x2 && y1 <= y2)) {
             throw new InvalidInputException(
                     "Given coordinates are either invalid or not within the canvas");
 

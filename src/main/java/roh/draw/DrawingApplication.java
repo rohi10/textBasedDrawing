@@ -1,20 +1,17 @@
 package roh.draw;
 
 import roh.draw.exception.InvalidInputException;
-import roh.draw.graphics.Canvas;
-import roh.draw.graphics.GraphicComponent;
-import roh.draw.helper.GraphicComponentFactory;
+import roh.draw.processor.GraphicProcessor;
 
 import java.util.Scanner;
 
 public class DrawingApplication {
 
-    private GraphicComponent baseGraphicComponent;
 
 
     public static void main(String[] args) {
 
-        DrawingApplication drawingApplication = new DrawingApplication();
+        GraphicProcessor graphicProcessor = new GraphicProcessor();
         displayUsage();
         try {
             while (true) {
@@ -22,7 +19,7 @@ public class DrawingApplication {
                 System.out.print("enter command: ");
                 String inputStr = in.nextLine();
                 String[] commands = inputStr.split(" ");
-                drawingApplication.process(commands);
+                graphicProcessor.process(commands);
             }
 
         } catch (InvalidInputException ex) {
@@ -32,27 +29,7 @@ public class DrawingApplication {
         }
     }
 
-    public void process(String[] commands) throws InvalidInputException {
 
-        if (baseGraphicComponent == null) {
-            baseGraphicComponent = new Canvas();
-        }
-
-        GraphicComponentFactory graphicComponentFactory = new GraphicComponentFactory();
-        GraphicComponent graphicComponent = graphicComponentFactory.getGraphicComponent(commands);
-
-        if (this.baseGraphicComponent != null) {
-            graphicComponent.setHeight(this.baseGraphicComponent.getHeight());
-            graphicComponent.setWidth(this.baseGraphicComponent.getWidth());
-            graphicComponent.setGraphic(this.baseGraphicComponent.getGraphic());
-        }
-        graphicComponent.initializeCoordinates(commands);
-
-        baseGraphicComponent.setGraphic(graphicComponent.getGraphic());
-        baseGraphicComponent.setWidth(graphicComponent.getWidth());
-        baseGraphicComponent.setHeight(graphicComponent.getHeight());
-
-    }
 
 
     private static void displayUsage() {

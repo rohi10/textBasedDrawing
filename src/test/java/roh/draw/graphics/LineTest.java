@@ -28,13 +28,20 @@ public class LineTest {
         canvas.setHeight(4);
         canvas.initializeCoordinates(canvasCommand);
         Line line = new Line();
-
+        line.setHeight(canvas.height);
+        line.setWidth(canvas.width);
+        line.setGraphic(canvas.graphic);
 
         char[][] expectedGraphic = {{'-','-', '-', '-', '-', '-'}, {'|', 0 ,0  ,0  ,0  , '|'}, {'|', 0 ,0  ,0  , 0 , '|'}, {'|', 0 , 0 ,0  ,0  , '|'}, {'|', 'X', 'X', 'X', 0 , '|'}, {'|',0  ,0  ,0  ,0  , '|'}, {'|',0  ,0  ,0  ,0  , '|'}, {'|',  0, 0 , 0 , 0 , '|'}, {'|',  0, 0 , 0 , 0 , '|'}, {'-','-', '-', '-', '-', '-'}};
-        line.initializeCoordinates(commands);
+       // char[][] expectedGraphic  = [[-, -, -, -, -, -], [|,  ,  ,  ,  , |], [|,  ,  ,  ,  , |], [|,  ,  ,  ,  , |], [|, X, X, X,  , |], [|,  ,  ,  ,  , |], [|,  ,  ,  ,  , |],    [|,  ,  ,  ,  , |],    [|,  ,  ,  ,  , |],    [-, -, -, -, -, -]]
 
-        assertTrue(line.getHeight() == 4);
-        assertTrue(line.getWidth() == 8);
+
+        line.initializeCoordinates(commands);
+        System.out.println(line.getHeight());
+        System.out.println(line.height);
+
+        assertTrue(line.getHeight() == 8);
+        assertTrue(line.getWidth() == 4);
         assertEquals(Arrays.deepToString(line.getGraphic()), Arrays.deepToString(expectedGraphic));
 
 
